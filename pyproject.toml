@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "consistent-routing"
+version = "0.1.0"
+description = "Bayes-consistent hinge losses for jointly training classifiers with a flat or cascade router"
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0", "numpy>=1.21", "matplotlib>=3.4"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["consistent_routing"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# matplotlib's mathtext triggers pyparsing deprecation warnings when drawing labels.
+filterwarnings = ["ignore::DeprecationWarning"]
